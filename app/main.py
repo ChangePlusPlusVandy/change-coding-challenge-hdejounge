@@ -89,7 +89,7 @@ def sendTweetToHTML():
     return render_template("base.html", data=tweet)
 
 
-app.route('/answer', methods=['POST'])
+@app.route('/answer', methods=['POST'])
 def getUserAnswer():
     # check if null
     if request.form['elon-btn']:
