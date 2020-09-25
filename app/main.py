@@ -77,7 +77,7 @@ def sendTweetToHTML():
     # update score accordingly
 
     seed(1)
-    value = 0.3
+    value = random()
     if value < 0.5:
         tweetIndex = randint(0, len(kanye_arr) - 1)
         tweet = kanye_arr[tweetIndex]
@@ -90,8 +90,6 @@ def sendTweetToHTML():
 
 
 app.route('/answer', methods=['POST'])
-
-
 def getUserAnswer():
     # check if null
     if request.form['elon-btn']:
