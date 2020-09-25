@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Elon vs. Kanye</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            background: linear-gradient(to bottom right, #1259fe, #003098);
+            color: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        div.container {
+            padding: 30px;
+        }
+
+        #game-container {
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            background-color: #fff;
+            border-radius: 14px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        #form-wrapper {
+            top: 0rem;
+            border-bottom: 1px solid #e9e9e9;
+            border-radius: 14px;
+            background-color: #fff;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            padding: 40px;
+        }
+
+        .tweet-box {
+            color: rgba(0, 0, 0, 0.61);
+            margin-top: 3.5rem;
+        }
+
+        .tweet {
+            margin-top: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit {
+            margin: 0.25rem 0 1.25rem 0;
+            background-color: #1259fe;
+            border-radius: 5px;
+            border: 0;
+            color: #fff;
+            padding: 0.25rem 1.25rem;
+            transform: scale(1.075);
+            transition: all 0.3s;
+        }
+
+        .submit:first-child {
+            margin-right: 1.5rem;
+        }
+
+        .submit:hover {
+            transform: scale(1.125);
+            opacity: 0.95;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Elon or Kanye ... who tweeted what?</h1>
+        <!-- number of tweets -->
+        <h3>The game will have 10 questions, and your results will be displayed at the end. Good luck!</h3>
+
+        <div id="game-container">
+            <div class="flex: 6">
+                <div class="tweet-box">
+
+                    {% for msg in tweet %}
+                    <p class="tweet"> {{ msg }} </p>
+                    {% endfor %}
+
+                    <!-- <p class="tweet">
+                        Here is where the tweet will be displayed!
+                    </p> -->
+                </div>
+
+                <div class="flex-container">
+                    <form action="/answer" method="post">
+                        <input type="submit" class="submit" class="btn" name="elon-btn" value="Elon">
+                        <input type="submit" class="submit" class="btn" name="kanye-btn" value="Kanye">
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
